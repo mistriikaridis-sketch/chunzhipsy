@@ -1,0 +1,15 @@
+{
+  "name": "chunzhi-psy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "王春枝心理咨询个人展示网站",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node server.mjs",
+    "preview": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
