@@ -6,3 +6,6 @@ preview-*.png
 *.zip
 .DS_Store
 Thumbs.db
+.wrangler/
+.dev.vars
+.dev.vars.*

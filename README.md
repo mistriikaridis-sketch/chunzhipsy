@@ -58,7 +58,9 @@ npm run build
 
 `dist/` 是完整部署目录，可上传到支持 HTTPS 的静态托管服务。需保留目录结构，并支持以目录内 `index.html` 作为默认页面，才能正常访问 `/en/`；无需 Node.js 服务端。
 
-网站 canonical、分享信息和站点地图配置为 https://chunzhipsy.com/ 及其英文路径。这是站点配置目标，目前尚未进行公网部署或域名绑定。本地预览不代表网站已公开上线。公网部署后，需在所选服务完成域名绑定并按其要求配置 DNS 和 HTTPS。
+网站 canonical、分享信息和站点地图配置为 https://chunzhipsy.com/ 及其英文路径。代码已上传至 https://github.com/mistriikaridis-sketch/chunzhipsy ，Cloudflare Pages 项目 chunzhipsy 已关联 main 分支。首次生产构建与部署已成功，项目地址为 https://chunzhipsy.pages.dev/ 。
+
+自定义域名 chunzhipsy.com 已发起关联，目前等待 CNAME 配置及注册商名称服务器切换，域名 HTTPS 和公网浏览器验收尚未完成。当前自动 HTTP 检查被 pages.dev 返回的 403 / 1010 阻止，不能将部署成功等同于访问验收成功。
 
 `server.mjs` 仅用于本机预览，监听 127.0.0.1，不提供访客数据存储。
 
