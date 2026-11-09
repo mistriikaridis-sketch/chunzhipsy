@@ -20,7 +20,7 @@
 
 仓库需要至少一个已提交的分支，才能选择生产分支。本项目使用 Node.js 构建，没有第三方依赖包；不需要在 Pages 中运行本地预览服务器。
 
-构建会生成中文、英文页面及站点地图。部署成功后，先通过 Cloudflare 返回的 `*.pages.dev` 地址检查网站；后续向发布分支推送更新时，Pages 会自动重新构建与部署。
+构建会生成中文首页、英文页、中文文章页 `/blog/how-to-choose-youth-counselor/` 及站点地图。部署成功后，先通过 Cloudflare 返回的 `*.pages.dev` 地址检查网站；后续向发布分支推送更新时，Pages 会自动重新构建与部署。
 
 参考：[Git 集成](https://developers.cloudflare.com/pages/get-started/git-integration/)、[构建配置](https://developers.cloudflare.com/pages/configuration/build-configuration/)、[跳过依赖安装](https://developers.cloudflare.com/pages/configuration/build-image/#skip-dependency-install)。
 
@@ -48,6 +48,7 @@ Git 集成与 Direct Upload 是不同的项目创建方式，创建前应确定�
 ## 上线后检查
 
 - 中文首页与 `/en/` 英文页可正常打开，语言切换往返正确。
+- `/blog/how-to-choose-youth-counselor/` 返回文章正文，而不是首页。
 - Logo、照片、首屏图片和自托管字体正常加载。
 - 微信二维码保持原图，联系入口、弹窗关闭和图片下载可用。
 - 手机布局无横向溢出，系统减少动态效果设置生效。

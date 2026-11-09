@@ -1,6 +1,6 @@
 # 春枝心理网站
 
-王春枝个人展示与咨询联系网站，采用日式和纸留白设计。中文首页为 `/`，英文版为 `/en/`，页头可通过 EN / 中文切换。页面使用真实 Logo、老师照片与微信二维码，不展示价格，不收集来访者信息。
+王春枝个人展示与咨询联系网站，采用日式和纸留白设计。中文首页为 `/`，英文版为 `/en/`，页头可通过 EN / 中文切换。中文文章为独立静态路径 `/blog/how-to-choose-youth-counselor/`。页面使用真实 Logo、老师照片与微信二维码，不展示价格，不收集来访者信息。
 
 ## 查看与运行
 
@@ -29,7 +29,8 @@ npm run dev
 - `site.en.mjs`：与中文配置结构一致的英文内容；修改履历时需同步核对两个语言版本。
 - `site.ui.mjs`：导航、按钮、说明、图片描述及无障碍标签等中英文界面词条。
 - `src/index.template.html`：两个语言版本共用的页面模板。
-- `scripts/build.mjs`：根据内容配置与界面词条生成两个语言版本。
+- `src/article.template.html` 与 `src/articles.mjs`：中文文章页的模板与正文。
+- `scripts/build.mjs`：根据内容配置与界面词条生成两个语言版本和中文文章页。
 - `dist/styles.css`：排版、响应式布局、纸纹、光影与减少动态效果设置。
 - `dist/app.js`：二维码弹窗、折叠、滚动显现、图片视差和当前导航高亮。
 - `dist/assets/fonts.css`：自托管字体声明。
@@ -44,7 +45,7 @@ npm run dev
 npm run build
 ```
 
-该命令更新 `dist/index.html`、`dist/en/index.html`、`robots.txt` 和 `sitemap.xml`，不会覆盖 CSS、交互脚本或素材。修改样式和交互脚本后，刷新浏览器即可。
+该命令更新 `dist/index.html`、`dist/en/index.html`、`dist/blog/how-to-choose-youth-counselor/index.html`、`robots.txt` 和 `sitemap.xml`，不会覆盖 CSS、交互脚本或素材。修改样式和交互脚本后，刷新浏览器即可。
 
 ## 页面与交互
 
@@ -62,7 +63,7 @@ npm run build
 
 自定义域名 chunzhipsy.com 已发起关联，目前等待 CNAME 配置及注册商名称服务器切换，域名 HTTPS 和公网浏览器验收尚未完成。当前自动 HTTP 检查被 pages.dev 返回的 403 / 1010 阻止，不能将部署成功等同于访问验收成功。
 
-`server.mjs` 仅用于本机预览，监听 127.0.0.1，不提供访客数据存储。
+`server.mjs` 仅用于本机预览，监听 127.0.0.1，不提供访客数据存储。目录地址不带结尾斜杠时，也会打开该目录下的 `index.html`；不存在的路径仍返回 404。
 
 ## 素材与字体
 

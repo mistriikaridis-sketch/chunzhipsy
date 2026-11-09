@@ -23,11 +23,18 @@ const server = http.createServer(async (request, response) => {
     const pathname = decodeURIComponent(new URL(request.url, "http://localhost").pathname);
     if (pathname.includes("\0")) throw new Error("Invalid path");
     const relative = pathname.endsWith("/") ? pathname + "index.html" : pathname;
-    const filename = path.resolve(root, "." + relative);
+    let filename = path.resolve(root, "." + relative);
     if (!filename.startsWith(root)) {
       response.writeHead(403); response.end("Forbidden"); return;
     }
-    const info = await stat(filename);
+    let info = await stat(filename);
+    if (info.isDirectory()) {
+      filename = path.join(filename, "index.html");
+      if (!filename.startsWith(root)) {
+        response.writeHead(403); response.end("Forbidden"); return;
+      }
+      info = await stat(filename);
+    }
     if (!info.isFile()) throw new Error("Not a file");
     const body = await readFile(filename);
     response.writeHead(200, {
