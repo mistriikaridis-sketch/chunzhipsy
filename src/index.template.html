@@ -146,7 +146,10 @@
   <footer class="site-footer">
     <div class="shell footer-inner">
       <p>{{brandName}} <span>{{siteName}}</span></p>
-      <a href="#top" aria-label="{{backTop}}">{{domain}}</a>
+      <nav class="footer-links" aria-label="{{footerNavLabel}}">
+        <a href="{{articleHref}}" hreflang="zh-CN" aria-label="{{articleAria}}">{{articleLabel}}</a>
+        <a href="#top" aria-label="{{backTop}}">{{domain}}</a>
+      </nav>
     </div>
   </footer>
 
